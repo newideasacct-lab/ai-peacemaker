@@ -1,32 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build/client"
-      }
-    },
-    {
-      "src": "api/index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/build/client/assets/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|json|png|jpg|jpeg|svg|ico|map))",
-      "dest": "/build/client/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "build/client",
   "env": {
     "SHOPIFY_API_KEY": "@shopify_api_key",
     "SHOPIFY_API_SECRET": "@shopify_api_secret",
