@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "framework": "vite",
+  "outputDirectory": ".react-router/dist/client",
+  "env": {
+    "SHOPIFY_API_KEY": "@shopify_api_key",
+    "SHOPIFY_API_SECRET": "@shopify_api_secret",
+    "SCOPES": "@shopify_scopes"
+  }
+}
