@@ -1,14 +1,22 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "build/client",
-  "framework": null,
+  "version": 2,
+  "builds": [
+    {
+      "src": "build/server/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "build/client/**",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
     {
       "src": "/assets/(.*)",
       "dest": "/build/client/assets/$1"
     },
     {
-      "src": "/(.*\\.(js|css|json|png|jpg|jpeg|svg|ico|map))",
+      "src": "/(.*\\.(js|css|png|jpg|svg|ico))",
       "dest": "/build/client/$1"
     },
     {
