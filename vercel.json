@@ -1,13 +1,19 @@
 {
-  "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "build/client",
   "framework": null,
-  "env": {
-    "SHOPIFY_API_KEY": "@shopify_api_key",
-    "SHOPIFY_API_SECRET": "@shopify_api_secret",
-    "SCOPES": "@shopify_scopes",
-    "SESSION_SECRET": "@session_secret",
-    "HOST": "@host"
-  }
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/build/client/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|json|png|jpg|jpeg|svg|ico|map))",
+      "dest": "/build/client/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/server/index.js"
+    }
+  ]
 }
