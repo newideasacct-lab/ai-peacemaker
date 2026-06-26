@@ -1,11 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 
-if (process.env.NODE_ENV !== "production") {
-  if (!global.prismaGlobal) {
-    global.prismaGlobal = new PrismaClient();
-  }
-}
+// This prevents Vercel/Serverless from creating a new Prisma instance on every single request
+const prisma =
+  global.prisma ||
+  new PrismaClient({
+    log: ["query", "info", "warn", "error"],
+  });
 
-const prisma = global.prismaGlobal ?? new PrismaClient();
+if (process.env.NODE_ENV !== "production") {
+  global.prisma = prisma;
+}
 
 export default prisma;
