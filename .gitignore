@@ -6,3 +6,5 @@ build
 .env.local
 *.lock
 !package-lock.json
+.vercel
+.env*
