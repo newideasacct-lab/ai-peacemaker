@@ -16,8 +16,6 @@
     "moduleResolution": "Bundler",
     "target": "ES2022",
     "types": ["@react-router/node", "vite/client", "@shopify/polaris-types"],
-    
-    /* ADD THIS SECTION */
     "paths": {
       "@/*": ["./src/*"]
     }

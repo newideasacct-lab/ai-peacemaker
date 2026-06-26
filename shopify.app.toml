@@ -45,7 +45,10 @@ api_version = "2026-07"
   topics = [ "app/scopes_update" ]
 
 [auth]
-redirect_urls = [ "https://ai-peacemaker.vercel.app/auth/callback" ]
+redirect_urls = [ 
+  "https://ai-peacemaker.vercel.app/auth/callback",
+  "https://ai-peacemaker.vercel.app/auth/shopify/callback"
+]
 
 [build]
 automatically_update_urls_on_dev = true
